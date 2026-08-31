@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miras | مراس</title>
+<style>
+:root{--primary:#4057c8;--bg:#f5f7fc;--text:#172033}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.container{max-width:850px;margin:auto;padding:22px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:46px;height:46px;border-radius:14px;background:var(--primary);color:white;display:grid;place-items:center;font-size:24px;font-weight:bold}.name{font-size:24px;font-weight:900}.arabic{font-size:14px;color:#6d7587}
+.lang{border:1px solid #dce1ec;background:white;border-radius:12px;padding:9px 12px;cursor:pointer}
+.card{background:#fff;border-radius:24px;padding:27px;box-shadow:0 12px 35px rgba(25,35,70,.07)}
+.progress{height:8px;background:#edf0f6;border-radius:10px;overflow:hidden}.bar{height:100%;width:0;background:var(--primary);transition:.3s}
+.meta{display:flex;justify-content:space-between;color:#737b8d;font-size:14px;margin:18px 0 12px}
+h1{font-size:26px;line-height:1.6;margin:0 0 22px}
+.answers{display:grid;gap:12px}.answer{border:2px solid #e3e7ef;background:#fff;border-radius:15px;padding:16px;text-align:right;font-size:17px;cursor:pointer}.answer:hover{border-color:#9aa9df}.answer.correct{background:#e9f8ef;border-color:#2ca564;color:#146c3c}.answer.wrong{background:#ffeaed;border-color:#e24c59;color:#a01d2a}.answer:disabled{cursor:default}
+.feedback{min-height:27px;margin:17px 0 5px;font-weight:bold}.next{display:none;width:100%;padding:15px;border:0;border-radius:14px;background:var(--primary);color:white;font-size:17px;font-weight:bold;cursor:pointer}.next.show{display:block}
+.result{text-align:center;display:none}.score{font-size:54px;font-weight:900;color:var(--primary);margin:15px}.restart{border:0;background:var(--primary);color:#fff;padding:14px 23px;border-radius:13px;font-size:16px;cursor:pointer}
+footer{text-align:center;color:#8b93a3;font-size:13px;margin-top:18px}
+[dir=ltr] .answer{text-align:left}
+@media(max-width:600px){.container{padding:14px}.card{padding:21px}h1{font-size:22px}.answer{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="brand">
+    <div class="logo">M</div>
+    <div><div class="name">Miras</div><div class="arabic">مراس · منصة الاختبارات</div></div>
+  </div>
+  <button class="lang" id="lang">FR</button>
+</header>
+
+<section class="card" id="quizCard">
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <div class="meta"><span id="counter"></span><span id="scoreText"></span></div>
+  <h1 id="question"></h1>
+  <div class="answers" id="answers"></div>
+  <div class="feedback" id="feedback"></div>
+  <button class="next" id="next"></button>
+</section>
+
+<section class="card result" id="result">
+  <div style="font-size:54px">🎉</div>
+  <h1 id="resultTitle">انتهى الاختبار!</h1>
+  <div class="score" id="finalScore"></div>
+  <p id="finalMessage"></p>
+  <button class="restart" id="restart">إعادة الاختبار</button>
+</section>
+
+<footer>Miras | مراس — منصة QCM مجانية</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
